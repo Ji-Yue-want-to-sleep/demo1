@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xz256的主页</title>
+
+    <style>
+        /* 1. 设置整个网页背景 */
+        body {
+            margin: 0; /* 去掉浏览器默认的边距 */
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif; /* 设置字体 */
+            height: 100vh; /* 让背景高度占满整个屏幕 */
+            
+            /* 使用 Flex 布局让内容垂直水平居中 */
+            display: flex;
+            justify-content: center; /* 水平居中 */
+            align-items: center;     /* 垂直居中 */
+
+            /* 设置动态渐变背景：颜色可以自己改 */
+            background: linear-gradient(-45deg, #1e3c72, #2a5298, #ff6b6b, #feca57);
+            background-size: 400% 400%; /* 放大背景以便移动 */
+            animation: bgMove 15s ease infinite; /* 运行名为 bgMove 的动画 */
+            color: white; /* 设置文字默认为白色 */
+        }
+
+        /* 定义背景移动的动画规则 */
+        @keyframes bgMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* 2. 中间那个半透明的“毛玻璃”卡片 */
+        .card {
+            /* 核心：背景模糊效果 (毛玻璃特效) */
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px); /* 兼容苹果浏览器 */
+            
+            background: rgba(255, 255, 255, 0.1); /* 白色背景，只有10%不透明度 */
+            border: 1px solid rgba(255, 255, 255, 0.3); /* 淡淡的白色边框 */
+            border-radius: 20px; /* 圆角 */
+            padding: 40px; /* 内部留白 */
+            width: 300px; /* 卡片宽度 */
+            text-align: center; /* 内容居中 */
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); /* 阴影，增加立体感 */
+        }
+
+        /* 3. 头像样式 */
+        .avatar {
+            width: 120px;  /* 头像大小 */
+            height: 120px;
+            border-radius: 50%; /* 变成圆形 */
+            border: 4px solid rgba(255, 255, 255, 0.5); /* 半透明边框 */
+            margin-bottom: 15px;
+            /* 鼠标放上去时的动画过渡时间 */
+            transition: transform 0.5s; 
+        }
+
+        /* 鼠标移到头像上时：旋转一圈 */
+        .avatar:hover {
+            transform: rotate(360deg);
+        }
+
+        /* 4. 名字样式 */
+        h1 {
+            margin: 10px 0;
+            font-size: 26px;
+            font-weight: 400; /* 字体不要太粗，显得清秀 */
+        }
+
+        /* 简介样式 */
+        p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8); /* 文字稍微透明一点 */
+            margin-bottom: 30px; /* 距离按钮远一点 */
+        }
+
+        /* 5. 按钮样式 */
+        .btn {
+            display: block; /* 独占一行 */
+            text-decoration: none; /* 去掉下划线 */
+            color: white;
+            padding: 12px;
+            margin: 10px 0; /* 按钮之间的间距 */
+            border-radius: 30px; /* 胶囊形状 */
+            background: rgba(0, 0, 0, 0.2); /* 按钮背景色 */
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: 0.3s; /* 变化时的动画时间 */
+        }
+
+        /* 鼠标移到按钮上时 */
+        .btn:hover {
+            background: white; /* 背景变白 */
+            color: #333;       /* 文字变黑 */
+            transform: scale(1.05); /* 微微变大 */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        
+        <img src="https://i0.hdslb.com/bfs/face/dd98a8b9e2a65b1182226a0007715f4d8caf251e.jpg@128w_128h_1c_1s.webp" alt="xz256头像" class="avatar">
+        
+        <h1>xz256</h1>
+        
+        <p>欢迎来到我的个人主页</p>
+        
+        <a href="https://github.com/xiaozhuo256" target="_blank" class="btn">
+            GitHub 主页
+        </a>
+
+        <a href="https://space.bilibili.com/430883403" target="_blank" class="btn">
+            Bilibili 主页
+        </a>
+
+    </div>
+
+</body>
+</html>
